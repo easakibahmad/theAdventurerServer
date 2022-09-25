@@ -1,11 +1,11 @@
 import React from 'react';
-
+import './Apply.css'
 const Apply = (props) => {
-    const {name, income}=props.index
+    const {company, phone}=props.index
     return (
-        <div>
-          <h1>name: {name}</h1>
-          <h2>salary: {income}</h2>
+        <div className='applydiv'>
+          <h1>name: {company}</h1>
+          <h2>salary: {phone}</h2>
         </div>
     );
 };
