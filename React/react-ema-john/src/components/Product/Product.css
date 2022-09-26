@@ -1,0 +1,41 @@
+.product-container img{
+    height: 283px;
+    border-radius: 12px;
+}
+
+.product-container{
+    width: 283px;
+    height: 403px;
+    margin-left: 20px;
+    position: relative;
+    border: 1px solid tomato;
+}
+
+.card{
+    padding: 0px 10px;
+}
+.card p{
+    margin: 10px 5px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.btn{
+    position: absolute;
+    width: 100%;
+    border: 0;
+    height: 30px;
+    background-color: tomato;
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: thistle;
+    cursor: pointer;
+    color: black;
+}
+
+.fab{
+    margin-left: 5px;
+}
