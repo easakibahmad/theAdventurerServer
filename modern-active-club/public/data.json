@@ -1,0 +1,38 @@
+[
+    {
+      "id": "633468b7b1fbd090ee190d4d",
+      "picture": "https://i.ytimg.com/vi/5rHS7TQpt_Y/maxresdefault.jpg",
+      "activityName": "Study",
+      "timeRequired": 32
+    },
+    {
+      "id": "633468b75bd56f036ee8a361",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDkyr8QS9WEZlvJK76rhFgqdQYaDefzy_LDA&usqp=CAU",
+      "activityName": "Playing Cricket",
+      "timeRequired": 22
+    },
+    {
+      "id": "633468b77dd9111693f33edb",
+      "picture": "https://play-lh.googleusercontent.com/GNhpcRx35Z7GzPE_gazP_DV71hrHcn9awyrK8TDkbihWkj2AXPswYj2ejTkZ85xr7fE",
+      "activityName": "Playing Football",
+      "timeRequired": 32
+    },
+    {
+      "id": "633468b7640d203f0d33924e",
+      "picture": "https://thumbs.dreamstime.com/z/gym-bikes-room-interior-cardio-row-indoors-62846016.jpg",
+      "activityName": "Physical Exercise",
+      "timeRequired": 25
+    },
+    {
+        "id": "633468b7b3ef47898ed6db70",
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfeQlGMOBQXeq9lVuD-IJXR-EnrOzAocFPwQ&usqp=CAU",
+        "activityName": "Playing Tennis",
+        "timeRequired": 31
+    },
+    {
+      "id": "633468b748ff1e7447978e19",
+      "picture": "https://sportsmatik.com/uploads/matik-sports-corner/matik-know-how/swimming1_1562582117.jpg",
+      "activityName": "https://sportsmatik.com/uploads/matik-sports-corner/matik-know-how/swimming1_1562582117.jpg",
+      "timeRequired": 28
+    }
+  ]
