@@ -56,10 +56,10 @@ async function run() {
 
     app.get("/review/:id", async (req, res) => {
       const id = req.params.id;
-      const query = { reviewItemID: id, date };
+      const query = { reviewItemID: id };
       const cursor = reviewCollection.find(query);
       const review = await cursor.toArray();
-      // res.send(review);
+      res.send(review);
     });
 
     app.get("/onereview/:id", async (req, res) => {
