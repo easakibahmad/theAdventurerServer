@@ -56,7 +56,7 @@ async function run() {
 
     app.get("/review/:id", async (req, res) => {
       const id = req.params.id;
-      const query = { reviewItemID: id };
+      const query = { reviewItemID: id, date };
       const cursor = reviewCollection.find(query);
       const review = await cursor.toArray();
       res.send(review);
@@ -77,6 +77,19 @@ async function run() {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
       const result = await reviewCollection.deleteOne(query);
+      res.send(result);
+    });
+
+    app.patch("/review/:id", async (req, res) => {
+      const id = req.params.id;
+      const opinion = req.body.opinion;
+      const query = { _id: ObjectId(id) };
+      const updateOpinion = {
+        $set: {
+          opinion: opinion,
+        },
+      };
+      const result = await reviewCollection.updateOne(query, updateOpinion);
       res.send(result);
     });
   } finally {
