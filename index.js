@@ -59,7 +59,15 @@ async function run() {
       const query = { reviewItemID: id, date };
       const cursor = reviewCollection.find(query);
       const review = await cursor.toArray();
-      res.send(review);
+      // res.send(review);
+    });
+
+    app.get("/onereview/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const oneReview = await reviewCollection.findOne(query);
+      res.send(oneReview);
+      // console.log(oneReview);
     });
 
     app.get("/review", async (req, res) => {
@@ -89,7 +97,9 @@ async function run() {
           opinion: opinion,
         },
       };
+      console.log(id);
       const result = await reviewCollection.updateOne(query, updateOpinion);
+      console.log(result);
       res.send(result);
     });
   } finally {
