@@ -3,6 +3,7 @@ const app = express();
 var jwt = require("jsonwebtoken");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const cors = require("cors");
+const { decode } = require("jsonwebtoken");
 const port = process.env.PORT || 5000;
 require("dotenv").config();
 
@@ -19,10 +20,18 @@ const client = new MongoClient(uri, {
 
 function verifyJWT(req, res, next) {
   const authHeader = req.headers.authorization;
-  console.log(authHeader);
+  // console.log(authHeader);
   if (!authHeader) {
-    res.status(401).send({ message: "unauthorized access" });
+    return res.status(401).send({ message: "unauthorized access" });
   }
+  // const token = authHeader.split(" ")[1];
+  // jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+  //   if (err) {
+  //     return res.status(403).send({ message: "forbidden access" });
+  //   }
+  //   req.decoded = decoded;
+
+  // } );
   next();
 }
 
@@ -102,6 +111,10 @@ async function run() {
     });
 
     app.get("/review", verifyJWT, async (req, res) => {
+      // const decoded = req.decoded;
+      // if (decoded.email !== req.query.email) {
+      //   return res.status(403).send({ message: "forbidden access" });
+      // }
       let query = {};
       if (req.query.email) {
         query = {
