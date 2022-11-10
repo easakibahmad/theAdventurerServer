@@ -17,6 +17,15 @@ const client = new MongoClient(uri, {
   serverApi: ServerApiVersion.v1,
 });
 
+function verifyJWT(req, res, next) {
+  const authHeader = req.headers.authorization;
+  console.log(authHeader);
+  if (!authHeader) {
+    res.status(401).send({ message: "unauthorized access" });
+  }
+  next();
+}
+
 async function run() {
   try {
     const placeCollection = client.db("theAdventurer").collection("services");
@@ -92,7 +101,8 @@ async function run() {
       // console.log(oneReview);
     });
 
-    app.get("/review", async (req, res) => {
+    app.get("/review", verifyJWT, async (req, res) => {
+      let query = {};
       if (req.query.email) {
         query = {
           reviewerEmail: req.query.email,
