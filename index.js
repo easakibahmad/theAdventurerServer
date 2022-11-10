@@ -24,8 +24,13 @@ async function run() {
     app.get("/services", async (req, res) => {
       const query = {};
       const cursor = placeCollection.find(query);
-      const places = await cursor.limit(3).toArray();
-      res.send(places);
+      const places = await cursor.toArray();
+      const latestData = [
+        places[places.length - 1],
+        places[places.length - 2],
+        places[places.length - 3],
+      ];
+      res.send(latestData);
     });
 
     app.get("/allservices", async (req, res) => {
