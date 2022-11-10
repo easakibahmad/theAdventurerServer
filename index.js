@@ -133,8 +133,9 @@ async function run() {
       res.send(result);
     });
 
-    app.patch("/review/:id", async (req, res) => {
+    app.put("/review/:id", async (req, res) => {
       const id = req.params.id;
+      console.log(id);
       const opinion = req.body.opinion;
       const query = { _id: ObjectId(id) };
       const updateOpinion = {
