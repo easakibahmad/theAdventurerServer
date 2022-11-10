@@ -20,6 +20,7 @@ async function run() {
   try {
     const placeCollection = client.db("theAdventurer").collection("services");
     const reviewCollection = client.db("theAdventurer").collection("reviews");
+    const exploreCollection = client.db("theAdventurer").collection("explore");
 
     app.get("/services", async (req, res) => {
       const query = {};
@@ -38,6 +39,13 @@ async function run() {
       const cursor = placeCollection.find(query);
       const places = await cursor.toArray();
       res.send(places);
+    });
+
+    app.get("/explore", async (req, res) => {
+      const query = {};
+      const cursor = exploreCollection.find(query);
+      const morePlaces = await cursor.toArray();
+      res.send(morePlaces);
     });
 
     app.get("/services/:id", async (req, res) => {
@@ -102,9 +110,7 @@ async function run() {
           opinion: opinion,
         },
       };
-      console.log(id);
       const result = await reviewCollection.updateOne(query, updateOpinion);
-      console.log(result);
       res.send(result);
     });
   } finally {
