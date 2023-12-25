@@ -1,0 +1,33 @@
+{
+  "name": "first-project-first-project-1",
+  "version": "1.0.0",
+  "description": "1. npm initialization: npm init -y   2. install express js: npm install express 3. install mongoose: npm install mongoose --save 4. install typescript: npm install typescript --save-dev 5. cors installation: npm install cors   6. dotenv installation: npm i dotenv 7. tsc initialization: tsc -init (typescript json file creation) 8. root and out directory setup: tsconfig.json file (rootDir -> src and outDir -> dist) 9.  add into scripts -> 'build' : 'tsc' 10. mongodb connection establishment 11. dotenv configuration folder 12. eslint installed 13. ts node dev added: npm i ts-node-dev 14. added into scripts:'start:dev' : 'ts-node-dev --respawn --transpile-only ./src/server.ts'       -> npm run start:dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start:dev": "ts-node-dev --respawn --transpile-only ./src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "http-status": "^1.7.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.2",
+    "ts-node-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.5",
+    "typescript": "^5.3.2"
+  }
+}
